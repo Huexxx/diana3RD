@@ -1,0 +1,3 @@
+on boot
+    setprop rild.libpath	/system/lib/lge-ril.so
+    #setprop rild.libargs	-d /dev/xmd-tty0

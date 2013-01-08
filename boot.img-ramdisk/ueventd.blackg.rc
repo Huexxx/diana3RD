@@ -1,0 +1,22 @@
+/dev/pvrsrvkm	   0666	  root	    root
+/dev/block/mmcblk0p2 0640 root		system
+/dev/block/mmcblk0p3 0640 root		system
+/dev/block/mmcblk0p4 0640 root		system
+/dev/block/mmcblk0p11     0660   system      media_rw
+/dev/block/mmcblk0p12     0660   system      media_rw
+
+/dev/ttyHS0               0600   bluetooth  bluetooth
+/dev/qemu_trace           0666   system     system
+
+# CDMA radio interface MUX
+/dev/tun                  0640   vpn        vpn
+
+# LGE RIL porting
+/dev/ttyspi*			  0660	 radio		radio
+/dev/pts*	    		  0660	 radio		radio
+
+#audio 
+/dev/pcmC0D0c             0660   audio      audio
+/dev/pcmC0D0p             0660   audio      audio
+/dev/controlC0            0660   audio      audio
+/dev/timer                0660   audio      audio

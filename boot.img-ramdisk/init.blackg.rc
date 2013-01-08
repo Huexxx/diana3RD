@@ -14,7 +14,7 @@ on init
     #for debugging, Please delete this script at release time 
 #    loglevel 7
 
-    start bootlogo 
+#    start bootlogo 
 
 on early-init
 
@@ -779,12 +779,12 @@ service bluetoothd /system/bin/logwrapper /system/bin/bluetoothd -d -n
     disabled  
 
 # --- BRCM  
-service bootlogo /sbin/bootlogo
-	user root
-	group root
-	disabled
-	onrestart write /sys/class/leds/lcd-backlight/brightness 50
-	oneshot
+#service bootlogo /sbin/bootlogo
+#	user root
+#	group root
+#	disabled
+#	onrestart write /sys/class/leds/lcd-backlight/brightness 50
+#	oneshot
 
 
 #    service hciattach /system/bin/hciattach -l

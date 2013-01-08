@@ -3,22 +3,24 @@
 # Secure boot
 ########################################
 on boot
+# Huexxx: doesn't feel it necessary...
 # [START][20111216, inhwan.we@lge.com]
-	exec /sbin/wallpaper -ap
-	wait /sbin/wallpaper
+#	exec /sbin/wallpaper -ap
+#	wait /sbin/wallpaper
 # [END] [20111216, inhwan.we@lge.com]
 
+# Huexxx: file doesn't exist
 ########################################
 # CAPP_SECCLK
 ########################################
-service lgsecclk /system/bin/lgsecclkserver
-    class main
-    user system
-    group system lgdrm_acc sdcard_rw media_rw
+#service lgsecclk /system/bin/lgsecclkserver
+#    class main
+#    user system
+#    group system lgdrm_acc sdcard_rw media_rw
 
 # restart when servicemanager is restarted
-on property:init.svc.servicemanager=restarting
-     restart lgsecclk
+#on property:init.svc.servicemanager=restarting
+#     restart lgsecclk
 
 ########################################
 # CAPP_DRM

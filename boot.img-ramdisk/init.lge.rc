@@ -1,15 +1,17 @@
+# Huexxx: file doesn't exist
 #CAPP_CKERROR_REPORTER
-import init.ckerror.rc
+#import init.ckerror.rc
 
+# Huexxx: doesn't feel it necessary
 ########################################
 # CAPP_UNINSTALL_PRELOADED
 ########################################
-service post_install /system/vendor/bin/post_install.sh
-    disabled
-    oneshot
+#service post_install /system/vendor/bin/post_install.sh
+#    disabled
+#    oneshot
 
-on property:sys.boot_completed=1
-    start post_install
+#on property:sys.boot_completed=1
+#    start post_install
 
 ########################################
 # CAPP_POWEROFF_ANI
@@ -50,20 +52,22 @@ on post-fs-data
     chown root system /data/dontpanic
     chmod 0775 /data/dontpanic
 
+# Huexxx: file doesn't exist
 # CAPP_NFS
-service nfsserversetup /system/bin/nfsserversetup
-    class late_start
-    user root
-    oneshot
+#service nfsserversetup /system/bin/nfsserversetup
+#    class late_start
+#    user root
+#    oneshot
 # CAPP_NFS_END
 
+# Huexxx: it's useless on deodexed roms...
 #CAPP_READAHEAD_BOOT_IMPROVE
-service preload /system/bin/treadahead -f
-    disabled
-    oneshot
+#service preload /system/bin/treadahead -f
+#    disabled
+#    oneshot
 
-on boot
-   start preload
+#on boot
+#   start preload
 
 ########################################
 # CAPP_MPROFILER

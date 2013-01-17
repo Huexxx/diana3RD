@@ -750,6 +750,14 @@ service fkvalues /system/bin/sh /system/etc/fkvalues.sh
 on property:sys.huexxx_fk_trigger=true
     start fkvalues
 
+service sbvalues /system/bin/sh /system/etc/sbvalues.sh
+    user root
+    disabled
+    oneshot
+
+on property:sys.huexxx_sb_trigger=true
+    start sbvalues
+
 #STOPSHIP: Remove logwrapper and -d option before production
 service bluetoothd /system/bin/logwrapper /system/bin/bluetoothd -d -n
     class main

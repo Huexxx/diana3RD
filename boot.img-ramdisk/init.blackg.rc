@@ -758,6 +758,14 @@ service sbvalues /system/bin/sh /system/etc/sbvalues.sh
 on property:sys.huexxx_sb_trigger=true
     start sbvalues
 
+service rilkil /system/bin/sh /system/etc/rilkil.sh
+    user root
+    disabled
+    oneshot
+
+on property:sys.huexxx_ril_trigger=true
+    start rilkil
+
 #STOPSHIP: Remove logwrapper and -d option before production
 service bluetoothd /system/bin/logwrapper /system/bin/bluetoothd -d -n
     class main

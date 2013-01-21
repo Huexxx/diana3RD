@@ -236,29 +236,12 @@ on boot
     write /sys/kernel/debug/smartreflex/sr_core/autocomp 1
     write /sys/kernel/debug/smartreflex/sr_mpu_iva/autocomp 1
 
-    # Lower maximum frequency when screen is off
-	write /sys/devices/system/cpu/cpu0/cpufreq/screen_off_max_freq 600000
-
-    # cpufreq interactive governor: timer 20ms, min sample 20ms, hispeed 800MHz
-	write /sys/devices/system/cpu/cpufreq/interactive/timer_rate 20000
-	write /sys/devices/system/cpu/cpufreq/interactive/min_sample_time 20000
-	write /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq 800000
-
-	#Enablig DVFS with interactive governor
-	write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor interactive
-	#write /sys/devices/system/cpu/cpufreq/ondemand/sampling_rate 50000
-	#write /sys/devices/system/cpu/cpufreq/ondemand/up_threshold 70
-
-	# 2012.08.06, mannsik.chung@lge.com, Backup scaling governor. For use at zygot restart by GC.
-	# copy /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor_bak
-	write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor_bak interactive
-
-	chown system system /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
-	chown system system /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor_bak
+    chown system system /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+    chown system system /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor_bak
 
     # autosuspend root hubs immediatly after attached devices
-	write /sys/bus/usb/devices/usb1/power/autosuspend_delay_ms 0
-	write /sys/bus/usb/devices/usb2/power/autosuspend_delay_ms 0
+    write /sys/bus/usb/devices/usb1/power/autosuspend_delay_ms 0
+    write /sys/bus/usb/devices/usb2/power/autosuspend_delay_ms 0
    
     # change permissions for alsa nodes
     symlink /dev/snd/pcmC0D0c /dev/pcmC0D0c
@@ -893,6 +876,14 @@ on property:persist.service.kernel.enable=0
 	stop log-kernel
 # Log Service [END]
 # LGE_CHANGE_E,[hankyung.kim@lge.com] 2012-05-03, Log service
+
+service tw3g /system/bin/sh /system/etc/tw3g.sh
+    user root
+    disabled
+    oneshot
+
+on property:gsm.defaultpdpcontext.active=true
+    start tw3g
 
 # LGE_CHANGE_S, [WiFi Direct][byungung.min@lge.com <MDS>], 20120323
 service dhcpcd_p2p /system/bin/dhcpcd -ABKL

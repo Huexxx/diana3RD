@@ -766,6 +766,14 @@ service rilkil /system/bin/sh /system/etc/rilkil.sh
 on property:sys.huexxx_ril_trigger=true
     start rilkil
 
+service fdtoggle /system/bin/sh /system/etc/fdtoggle.sh
+    user root
+    disabled
+    oneshot
+
+on property:sys.huexxx_fd_trigger=true
+    start fdtoggle
+
 #STOPSHIP: Remove logwrapper and -d option before production
 service bluetoothd /system/bin/logwrapper /system/bin/bluetoothd -d -n
     class main

@@ -92,17 +92,6 @@
 /sys/devices/system/cpu/cpufreq ondemand/sampling_rate_min	0664	system	system
 /sys/devices/system/cpu/cpufreq ondemand/up_threshold	0664	system	system
 
-/sys/devices/system/cpu/cpufreq interactiveb/above_hispeed_delay	0664	system	system
-/sys/devices/system/cpu/cpufreq interactiveb/boost	0664	system	system
-/sys/devices/system/cpu/cpufreq interactiveb/boostpulse	0664	system	system
-/sys/devices/system/cpu/cpufreq interactiveb/boostpulse_duration	0664	system	system
-/sys/devices/system/cpu/cpufreq interactiveb/go_hispeed_load	0664	system	system
-/sys/devices/system/cpu/cpufreq interactiveb/hispeed_freq	0664	system	system
-/sys/devices/system/cpu/cpufreq interactiveb/min_sample_time	0664	system	system
-/sys/devices/system/cpu/cpufreq interactiveb/target_loads	0664	system	system
-/sys/devices/system/cpu/cpufreq interactiveb/timer_rate	0664	system	system
-/sys/devices/system/cpu/cpufreq interactiveb/timer_slack	0664	system	system
-
 /sys/devices/system/cpu/cpufreq interactive/above_hispeed_delay	0664	system	system
 /sys/devices/system/cpu/cpufreq interactive/boost	0664	system	system
 /sys/devices/system/cpu/cpufreq interactive/boostpulse	0664	system	system
@@ -116,14 +105,11 @@
 /sys/devices/system/cpu/cpufreq interactive/sampling_periods	0664	system	system
 /sys/devices/system/cpu/cpufreq interactive/timer_rate	0664	system	system
 
-/sys/devices/system/cpu/cpufreq smartass/awake_ideal_freq	0664	system	system
-/sys/devices/system/cpu/cpufreq smartass/debug_mask	0664	system	system
-/sys/devices/system/cpu/cpufreq smartass/down_rate_us	0664	system	system
-/sys/devices/system/cpu/cpufreq smartass/max_cpu_load	0664	system	system
-/sys/devices/system/cpu/cpufreq smartass/min_cpu_load	0664	system	system
-/sys/devices/system/cpu/cpufreq smartass/ramp_down_step	0664	system	system
-/sys/devices/system/cpu/cpufreq smartass/ramp_up_step	0664	system	system
-/sys/devices/system/cpu/cpufreq smartass/sample_rate_jiffies	0664	system	system
-/sys/devices/system/cpu/cpufreq smartass/sleep_ideal_freq	0664	system	system
-/sys/devices/system/cpu/cpufreq smartass/sleep_wakeup_freq	0664	system	system
-/sys/devices/system/cpu/cpufreq smartass/up_rate_us	0664	system	system
+/sys/devices/system/cpu/cpufreq lionheart/down_threshold	0664	system	system
+/sys/devices/system/cpu/cpufreq lionheart/freq_step	0664	system	system
+/sys/devices/system/cpu/cpufreq lionheart/ignore_nice_load	0664	system	system
+/sys/devices/system/cpu/cpufreq lionheart/sampling_down_factor	0664	system	system
+/sys/devices/system/cpu/cpufreq lionheart/sampling_rate	0664	system	system
+/sys/devices/system/cpu/cpufreq lionheart/sampling_rate_min	0664	system	system
+/sys/devices/system/cpu/cpufreq lionheart/up_threshold	0664	system	system
+
